@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="title padded">
+      <h1>List of Land Rovers</h1>
+    </div>
+    <div class="list">
+      <%= @cars.each do |car| %>
+        <div class="list-item">
+          <p><%= car.title %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
