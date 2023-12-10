@@ -1,14 +1,29 @@
 <div class="wrapper">
   <div class="container">
-    <div class="title padded">
+    <div class="title padded text-center">
       <h1>List of Land Rovers</h1>
     </div>
     <div class="list">
-      <%= @cars.each do |car| %>
+      <% @cars.each do |car| %>
         <div class="list-item">
-          <p><%= car.title %></p>
+          <%= image_tag car.image_url %>
+          <div class="list-item-infos">
+            <p><%= car.title %></p>
+            <p><strong>Licence plate:</strong> <%= car.vrn %></p>
+            <p><strong>Mileage:</strong> <%= car.mileage %></p>
+            <p><strong>Year:</strong> <%= car.year.strftime("%Y") %></p>
+          </div>
+          <div class="list-item-seller">
+            <%= image_tag car.image_url %>
+          </div>
+          <div class="list-item-price" >
+            <p><strong>Price:</strong> £<%= car.price %></p>
+          </div>
         </div>
       <% end %>
     </div>
   </div>
 </div>
+
+
+
